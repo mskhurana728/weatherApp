@@ -1,7 +1,8 @@
-const searchBtn = document.querySelector(".searchBtn");
+const form = document.querySelector("form");
 let cityName;
 
-searchBtn.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
 	const locationValue = document.querySelector("#location").value;
 	cityName = locationValue;
 	fetchWeather(cityName);
