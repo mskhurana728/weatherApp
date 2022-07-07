@@ -1,0 +1,95 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.content {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	height: 100vh;
+	/* padding: 1rem; */
+}
+.heading {
+	grid-column: 1/-1;
+	grid-row: 1/2;
+	padding-left: 1rem;
+	padding-top: 1.5rem;
+	font-size: 1.5rem;
+	/* padding-left: 1rem; */
+	color: white;
+	font-weight: bold;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	background-color: grey;
+}
+.locationForm {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	/* align-items: center; */
+	/* justify-items: center; */
+	grid-area: 2/1/3/-1;
+	background-color: rgb(70, 69, 69);
+	font-size: 1.4rem;
+	color: white;
+}
+input {
+	border-radius: 1rem;
+	height: 1.3rem;
+	border: 0px;
+	padding-left: 12px;
+}
+button {
+	border-radius: 1rem;
+	height: 1.3rem;
+	width: 3.3rem;
+	border: 0px;
+}
+.locationWeather {
+	padding: 1rem;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	grid-area: 3/1/-1/-1;
+	background-color: rgb(31, 31, 31);
+	/* color: white; */
+}
+.weatherInfo {
+	border-radius: 1rem;
+	/* display: none; */
+	visibility: hidden;
+	background-color: white;
+	/* color: white; */
+	width: 20vw;
+	height: 30vh;
+	/* display: flex; */
+	/* justify-content: center; */
+	padding: 1rem;
+	text-align: left;
+}
+.city {
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+.country {
+	margin-left: 4rem;
+	color: grey;
+	font-weight: 600;
+}
+.temp {
+	font-size: 1.2rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	font-weight: 600;
+}
+.humidity {
+	font-size: 1.2rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	font-weight: 600;
+}
+.pressure {
+	font-size: 1.2rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	font-weight: 600;
+}
