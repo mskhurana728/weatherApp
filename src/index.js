@@ -21,6 +21,8 @@ async function fetchWeather(cityName) {
 		const data = requiredData(weatherData);
 		displayWeather(data);
 	} catch (error) {
+		weatherInfo.textContent = `Sorry Cannot Get The Weather Of ${cityName}!!!`;
+
 		console.log(error);
 	}
 }
