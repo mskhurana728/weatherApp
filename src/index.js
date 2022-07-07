@@ -1,4 +1,5 @@
 const form = document.querySelector("form");
+const weatherInfo = document.querySelector(".weatherInfo");
 let cityName;
 
 form.addEventListener("submit", (e) => {
@@ -6,6 +7,8 @@ form.addEventListener("submit", (e) => {
 	const locationValue = document.querySelector("#location").value;
 	cityName = locationValue;
 	fetchWeather(cityName);
+	weatherInfo.style.visibility = "visible";
+	weatherInfo.textContent = "Loading...";
 });
 
 async function fetchWeather(cityName) {
@@ -16,9 +19,29 @@ async function fetchWeather(cityName) {
 		const weatherData = await response.json();
 
 		const data = requiredData(weatherData);
+		displayWeather(data);
 	} catch (error) {
 		console.log(error);
 	}
+}
+function displayWeather(data) {
+	weatherInfo.textContent = "";
+	const city = document.createElement("p");
+	city.classList.add("city");
+	city.textContent = data.location;
+	const country = document.createElement("p");
+	country.classList.add("country");
+	country.textContent = data.country;
+	const temp = document.createElement("p");
+	temp.classList.add("temp");
+	temp.textContent = "Temp:     " + data.temp + "°C";
+	const pressure = document.createElement("p");
+	pressure.classList.add("pressure");
+	pressure.textContent = "Pressure:  " + data.pressure;
+	const humidity = document.createElement("p");
+	humidity.classList.add("humidity");
+	humidity.textContent = "Humidity: " + data.humidity;
+	weatherInfo.append(city, country, temp, pressure, humidity);
 }
 
 function requiredData(weatherData) {
